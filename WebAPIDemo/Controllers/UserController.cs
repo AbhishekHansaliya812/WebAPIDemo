@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Template;
 using Model;
 
 namespace WebAPIDemo.Controllers
@@ -7,11 +8,24 @@ namespace WebAPIDemo.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        [HttpPost(Name = "TestPostAPI")]
-        public User TestPostAPI(User user)
+        /// <summary>
+        /// THis is just a testing
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost( "TestPostAPI")]
+        //[Route("post")]
+        public User Post(User user)
         {
             user.CompanyName = "Advanced";
             return user;
+        }
+
+        [HttpPut( "TestPutAPI")]
+        //[Route("put")]
+        public string TestPutAPI(User user)
+        {
+            return "Welcome to PUT";
         }
     }
 }
