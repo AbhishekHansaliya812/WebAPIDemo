@@ -4,9 +4,30 @@
         <name>WebAPIDemo</name>
     </assembly>
     <members>
-        <member name="M:WebAPIDemo.Controllers.UserController.Post(Model.User)">
+        <member name="M:WebAPIDemo.Controllers.UserController.GetUserDetails">
             <summary>
-            THis is just a testing
+            Get Details of all users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.UserController.PostUserDetails(Model.User)">
+            <summary>
+            Add user
+            </summary>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.UserController.UpdateUserDetails(Model.User)">
+            <summary>
+            This is just a testing for PUT
+            </summary>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.UserController.DeleteUserDetails(Model.User)">
+            <summary>
+            Delete user
+            </summary>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.WeatherForecastController.Get">
+            <summary>
+            This is just a testing for GET
             </summary>
             <param name="user"></param>
             <returns></returns>

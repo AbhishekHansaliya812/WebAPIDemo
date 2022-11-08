@@ -1,31 +1,59 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing.Template;
 using Model;
+using System.Security.Cryptography.Xml;
 
 namespace WebAPIDemo.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("users")]
     public class UserController : ControllerBase
     {
-        /// <summary>
-        /// THis is just a testing
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        [HttpPost( "TestPostAPI")]
-        //[Route("post")]
-        public User Post(User user)
+        private List<User> users = new List<User>()
         {
-            user.CompanyName = "Advanced";
-            return user;
+            new User(1,"Abhishek","abhishek@gmail.com",9999999990),
+            new User(2,"Meet","meet@gmail.com",9999999991),
+            new User(3,"Abhineet","abhineet@gmail.com",9999999992),
+            new User(4,"Jyoti","jyoti@gmail.com",9999999993),
+        };
+
+        /// <summary>
+        /// Get Details of all users
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetUserDetails")]
+        public List<User> GetUserDetails()
+        { 
+            return users;
         }
 
-        [HttpPut( "TestPutAPI")]
-        //[Route("put")]
-        public string TestPutAPI(User user)
+        /// <summary>
+        /// Add user
+        /// </summary>
+        [HttpPost("PostUserDetails")]
+        public List<User> PostUserDetails(User user)
         {
-            return "Welcome to PUT";
+            users.Add(user);
+            return users;
+        }
+
+        /// <summary>
+        /// This is just a testing for PUT
+        /// </summary>
+        [HttpPut("PutUserDetails")]
+        public List<User> UpdateUserDetails(User user)
+        {
+            return users;
+        }
+
+        /// <summary>
+        /// Delete user
+        /// </summary>
+        [HttpDelete("DeleteUserDetails")]
+        public List<User> DeleteUserDetails(User user)
+        {
+            users.Remove(user);
+            return users;
         }
     }
 }

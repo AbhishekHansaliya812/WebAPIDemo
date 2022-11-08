@@ -4,9 +4,16 @@ namespace Model
 {
     public class User
     {
-        public string? UserName { get; set; }
-        public int UserId { get; set; }
-
-        public string? CompanyName { get; set; }
+        public int userId { get; set; }
+        public string? userName { get; set; }
+        public string? email { get; set; }
+        public long mobileNumber { get; set; }
+        public User(int UserId, string? UserName, string? Email, long MobileNumber)
+        {
+            userId = UserId;
+            userName = UserName;
+            email = Email;
+            mobileNumber = MobileNumber;
+        }
     }
 }
