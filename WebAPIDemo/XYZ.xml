@@ -4,23 +4,66 @@
         <name>WebAPIDemo</name>
     </assembly>
     <members>
-        <member name="M:WebAPIDemo.Controllers.UserController.GetUserDetails">
+        <member name="T:WebAPIDemo.Controllers.EmpoyeeController">
+            <summary>
+            Employee Controller
+            </summary>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.#ctor(Model.DBModels.WebApidemoContext,Microsoft.Extensions.Logging.ILogger{WebAPIDemo.Controllers.EmpoyeeController})">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.GetAllEmployees">
+            <summary>
+            Get All Employees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.CreateEmployee(Model.RequestModels.EmployeeCreateRequest)">
+            <summary>
+            Create Employee
+            </summary>
+            <param name="employeeCreateRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.UpdateEmployee(Model.RequestModels.EmployeeUpdateRequest)">
+            <summary>
+            Updating Employee
+            </summary>
+            <param name="employeeUpdateRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.DeleteEmployee(Model.RequestModels.EmployeeDeleteRequest)">
+            <summary>
+            Delete Employee
+            </summary>
+            <param name="employeeDeleteRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="F:WebAPIDemo.Controllers.UsersController.users">
+            <summary>
+            User information
+            </summary>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.UsersController.GetUserDetails">
             <summary>
             Get Details of all users
             </summary>
             <returns></returns>
         </member>
-        <member name="M:WebAPIDemo.Controllers.UserController.PostUserDetails(Model.User)">
+        <member name="M:WebAPIDemo.Controllers.UsersController.PostUserDetails(Model.User)">
             <summary>
             Add user
             </summary>
         </member>
-        <member name="M:WebAPIDemo.Controllers.UserController.UpdateUserDetails(Model.User)">
+        <member name="M:WebAPIDemo.Controllers.UsersController.UpdateUserDetails(Model.User)">
             <summary>
-            This is just a testing for PUT
+            Update User
             </summary>
         </member>
-        <member name="M:WebAPIDemo.Controllers.UserController.DeleteUserDetails(Model.User)">
+        <member name="M:WebAPIDemo.Controllers.UsersController.DeleteUserDetails(Model.User)">
             <summary>
             Delete user
             </summary>
@@ -31,6 +74,11 @@
             </summary>
             <param name="user"></param>
             <returns></returns>
+        </member>
+        <member name="T:WebAPIDemo.CustomMiddlewares.ExceptionHandlingMiddleware">
+            <summary>
+             Class For Global Exception Handling
+            </summary>
         </member>
     </members>
 </doc>

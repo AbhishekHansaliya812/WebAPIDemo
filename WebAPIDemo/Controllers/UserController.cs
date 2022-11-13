@@ -1,59 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing.Template;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Model;
-using System.Security.Cryptography.Xml;
+using System.Data;
+using System.Security.Claims;
 
 namespace WebAPIDemo.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("users")]
     public class UserController : ControllerBase
     {
-        private List<User> users = new List<User>()
+        //For admin Only
+        [HttpGet]
+        [Route("Admins")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult AdminEndPoint()
         {
-            new User(1,"Abhishek","abhishek@gmail.com",9999999990),
-            new User(2,"Meet","meet@gmail.com",9999999991),
-            new User(3,"Abhineet","abhineet@gmail.com",9999999992),
-            new User(4,"Jyoti","jyoti@gmail.com",9999999993),
-        };
-
-        /// <summary>
-        /// Get Details of all users
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("GetUserDetails")]
-        public List<User> GetUserDetails()
-        { 
-            return users;
+            var currentUser = GetCurrentUser();
+            return Ok($"Hi you are an {currentUser.Role}");
         }
-
-        /// <summary>
-        /// Add user
-        /// </summary>
-        [HttpPost("PostUserDetails")]
-        public List<User> PostUserDetails(User user)
+        private UserModel GetCurrentUser()
         {
-            users.Add(user);
-            return users;
-        }
-
-        /// <summary>
-        /// This is just a testing for PUT
-        /// </summary>
-        [HttpPut("PutUserDetails")]
-        public List<User> UpdateUserDetails(User user)
-        {
-            return users;
-        }
-
-        /// <summary>
-        /// Delete user
-        /// </summary>
-        [HttpDelete("DeleteUserDetails")]
-        public List<User> DeleteUserDetails(User user)
-        {
-            users.Remove(user);
-            return users;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                var userClaims = identity.Claims;
+                return new UserModel
+                {
+                    Username = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value,
+                    Role = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value
+                };
+            }
+            return null;
         }
     }
 }

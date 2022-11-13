@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Model</name>
+    </assembly>
+    <members>
+        <member name="P:Model.User.userId">
+            <summary>
+            user Id
+            </summary>
+        </member>
+        <member name="P:Model.User.userName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Model.User.email">
+            <summary>
+            User Email
+            </summary>
+        </member>
+        <member name="P:Model.User.mobileNumber">
+            <summary>
+            User Mobile Number
+            </summary>
+        </member>
+    </members>
+</doc>
