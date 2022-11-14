@@ -4,38 +4,46 @@
         <name>WebAPIDemo</name>
     </assembly>
     <members>
-        <member name="T:WebAPIDemo.Controllers.EmpoyeeController">
+        <member name="M:WebAPIDemo.Controllers.CustomerController.Add(Model.Customer)">
+            <summary>
+            Add customer
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPIDemo.Controllers.EmployeeController">
             <summary>
             Employee Controller
             </summary>
         </member>
-        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.#ctor(Model.DBModels.WebApidemoContext,Microsoft.Extensions.Logging.ILogger{WebAPIDemo.Controllers.EmpoyeeController})">
+        <member name="M:WebAPIDemo.Controllers.EmployeeController.GetAllEmployees">
             <summary>
-            
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.GetAllEmployees">
-            <summary>
-            Get All Employees
+            Fetch details of all Employees
             </summary>
             <returns></returns>
         </member>
-        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.CreateEmployee(Model.RequestModels.EmployeeCreateRequest)">
+        <member name="M:WebAPIDemo.Controllers.EmployeeController.GetEmployee(System.Int32)">
+            <summary>
+            Fetch detail of employee
+            </summary>
+            <param name="EmployeeId">Id of Employee</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPIDemo.Controllers.EmployeeController.CreateEmployee(Model.RequestModels.EmployeeCreateRequest)">
             <summary>
             Create Employee
             </summary>
             <param name="employeeCreateRequest"></param>
             <returns></returns>
         </member>
-        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.UpdateEmployee(Model.RequestModels.EmployeeUpdateRequest)">
+        <member name="M:WebAPIDemo.Controllers.EmployeeController.UpdateEmployee(System.Int32,Model.RequestModels.EmployeeUpdateRequest)">
             <summary>
             Updating Employee
             </summary>
             <param name="employeeUpdateRequest"></param>
             <returns></returns>
         </member>
-        <member name="M:WebAPIDemo.Controllers.EmpoyeeController.DeleteEmployee(Model.RequestModels.EmployeeDeleteRequest)">
+        <member name="M:WebAPIDemo.Controllers.EmployeeController.DeleteEmployee(System.Int32)">
             <summary>
             Delete Employee
             </summary>

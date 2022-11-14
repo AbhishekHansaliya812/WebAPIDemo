@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.ResponseModel
 {
+    /*Class for Global Exception Handling*/
     public class ErrorResponse
     {
         public bool Success { get; set; }

@@ -10,6 +10,8 @@ namespace WebAPIDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+    /* Controller to generate Bearer token if records of user is existing */
     public class LoginController : ControllerBase
     {
         private readonly IConfiguration _config;

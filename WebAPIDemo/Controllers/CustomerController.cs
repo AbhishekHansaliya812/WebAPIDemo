@@ -5,6 +5,8 @@ namespace WebAPIDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+    /* Controller for Customer (Fluent Validation) */
     public class CustomerController : ControllerBase
     {
         /// <summary>

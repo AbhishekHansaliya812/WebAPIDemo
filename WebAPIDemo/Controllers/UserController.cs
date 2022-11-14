@@ -8,12 +8,14 @@ namespace WebAPIDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+    /* Controller to authenticate Bearer Token and to give access of data to user */
     public class UserController : ControllerBase
     {
         //For admin Only
         [HttpGet]
         [Route("Admins")]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public IActionResult AdminEndPoint()
         {
             var currentUser = GetCurrentUser();

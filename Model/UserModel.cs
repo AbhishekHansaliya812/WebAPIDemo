@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /* Class for authentication of user to get data */
     public class UserModel
     {
         public string Username { get; set; }

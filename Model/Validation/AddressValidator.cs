@@ -3,8 +3,10 @@ using Model;
 
 namespace Model.Validation
 {
+    /* Class to validate Address class */
     public class AddressValidator : AbstractValidator<Address>
     {
+        /* Constructor */
         public AddressValidator()
         {
             // Validate address is not longer than 60 chars as many APIs for carriers doesn't allow

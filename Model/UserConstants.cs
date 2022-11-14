@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /* Class where username, password, role are stored of users (used in JWT Token Authentication) */
     public class UserConstants
     {
         public static List<UserModel> Users = new()

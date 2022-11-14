@@ -2,6 +2,7 @@
 
 namespace Model
 {
+    /* Class to get user details */
     public class User
     {
         /// <summary>

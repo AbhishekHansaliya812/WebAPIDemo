@@ -11,25 +11,22 @@ namespace WebAPIDemo.Controllers
     /// Employee Controller
     /// </summary>
     [ApiController]
-    [Route("employee")]
+    [Route("employees")]
 
-    public class EmpoyeeController : ControllerBase
+    /* Controller for CRUD operation on Employee Table in Database */
+    public class EmployeeController : ControllerBase
     {
         private readonly WebApidemoContext _context;
-        private readonly ILogger<EmpoyeeController> _logger;
+        private readonly ILogger<EmployeeController> _logger;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="context"></param>
-        public EmpoyeeController(WebApidemoContext context, ILogger<EmpoyeeController> logger)
+        public EmployeeController(WebApidemoContext context, ILogger<EmployeeController> logger)
         {
             _context = context;
             _logger = logger;
         }
 
         /// <summary>
-        /// Get All Employees
+        /// Fetch details of all Employees
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -48,12 +45,33 @@ namespace WebAPIDemo.Controllers
         }
 
         /// <summary>
+        /// Fetch detail of employee
+        /// </summary>
+        /// <param name="EmployeeId">Id of Employee</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getemployee/{EmployeeId}")]
+        public async Task<Employees> GetEmployee(int EmployeeId)
+        {
+            Employee employee = _context.Employees.Find(EmployeeId);
+            
+            /*Fetching details of employee*/
+            Employees employees = new Employees()
+            {
+                EmployeeId = employee.EmployeeId,
+                EmployeeName = employee.EmployeeName,
+                MobileNumber = employee.MobileNumber,
+            };
+            return employees;
+        }
+
+        /// <summary>
         /// Create Employee
         /// </summary>
         /// <param name="employeeCreateRequest"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("createemployee")]
+        [Route("create")]
         public async Task<Employees> CreateEmployee(EmployeeCreateRequest employeeCreateRequest)
         {
             /*adding new entry of employee*/
@@ -80,15 +98,15 @@ namespace WebAPIDemo.Controllers
 
         /// <summary>
         /// Updating Employee
-        /// </summary>
+        /// </summary>  
         /// <param name="employeeUpdateRequest"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("updateemployee")]
-        public async Task<Employees> UpdateEmployee(EmployeeUpdateRequest employeeUpdateRequest)
+        [Route("update/{EmployeeId}")]
+        public async Task<Employees> UpdateEmployee(int EmployeeId, EmployeeUpdateRequest employeeUpdateRequest)
         {
             /*Updating details of existing employee*/
-            Employee employee = _context.Employees.Find(employeeUpdateRequest.EmployeeId);
+            Employee employee = _context.Employees.Find(EmployeeId);
 
             employee.EmployeeName = employeeUpdateRequest.EmployeeName;
             employee.MobileNumber = employeeUpdateRequest.MobileNumber;
@@ -112,11 +130,11 @@ namespace WebAPIDemo.Controllers
         /// <param name="employeeDeleteRequest"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("deleteemployee")]
-        public async Task<Employees> DeleteEmployee(EmployeeDeleteRequest employeeDeleteRequest)
+        [Route("delete/{EmployeeId}")]
+        public async Task<Employees> DeleteEmployee(int EmployeeId)
         {
             /*Deleting record of employee*/
-            Employee employee = _context.Employees.Find(employeeDeleteRequest.EmployeeId);
+            Employee employee = _context.Employees.Find(EmployeeId);
 
             _context.Employees.Remove(employee);
 

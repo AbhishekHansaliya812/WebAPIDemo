@@ -3,8 +3,10 @@ using Model;
 
 namespace Model.Validation
 {
+    /* Class to Validate Customer Class */
     public class CustomerValidator : AbstractValidator<Customer>
     {
+        /* Cunstructor */
         public CustomerValidator()
         {
             // Check name is not null, empty and is between 1 and 250 characters

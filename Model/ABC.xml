@@ -4,6 +4,76 @@
         <name>Model</name>
     </assembly>
     <members>
+        <member name="P:Model.Address.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Model.Address.Street1">
+            <summary>
+            Street 1
+            </summary>
+        </member>
+        <member name="P:Model.Address.Street2">
+            <summary>
+            Street 2
+            </summary>
+        </member>
+        <member name="P:Model.Address.State">
+            <summary>
+            State
+            </summary>
+        </member>
+        <member name="P:Model.Address.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="P:Model.Address.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:Model.Address.PostalCode">
+            <summary>
+            Postal Code
+            </summary>
+        </member>
+        <member name="P:Model.RequestModels.EmployeeCreateRequest.EmployeeName">
+            <summary>
+            Name of Employee
+            </summary>
+        </member>
+        <member name="P:Model.RequestModels.EmployeeCreateRequest.MobileNumber">
+            <summary>
+            Mobile number of Employee
+            </summary>
+        </member>
+        <member name="P:Model.RequestModels.EmployeeUpdateRequest.EmployeeName">
+            <summary>
+            Name of employee
+            </summary>
+        </member>
+        <member name="P:Model.RequestModels.EmployeeUpdateRequest.MobileNumber">
+            <summary>
+            Mobile number of employee
+            </summary>
+        </member>
+        <member name="P:Model.ResponseModel.Employees.EmployeeId">
+            <summary>
+            Id of Employee
+            </summary>
+        </member>
+        <member name="P:Model.ResponseModel.Employees.EmployeeName">
+            <summary>
+            Name of Employee
+            </summary>
+        </member>
+        <member name="P:Model.ResponseModel.Employees.MobileNumber">
+            <summary>
+            Mobile number of employee
+            </summary>
+        </member>
         <member name="P:Model.User.userId">
             <summary>
             user Id

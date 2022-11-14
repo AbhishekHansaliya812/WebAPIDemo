@@ -52,8 +52,7 @@ builder.Services.AddSwaggerGen(options =>
     var xmlFilename = $"XYZ.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
-    /*var xmlFilenameforModel = $"ABC.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilenameforModel));*/
+    options.IncludeXmlComments(@"../Model/ABC.xml");
 });
 
 builder.Services.AddDbContext<WebApidemoContext>(options =>
@@ -87,6 +86,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

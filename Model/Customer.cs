@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /* Class to get customer Details (Fluent Validation) */
     public class Customer
     {
         public int Id { get; set; }
