@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model;
+using Model.Validation;
 
 namespace WebAPIDemo.Controllers
 {
@@ -24,6 +25,25 @@ namespace WebAPIDemo.Controllers
             }
 
             return StatusCode(StatusCodes.Status200OK, "Model is valid!");
+        }
+
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPut("update")]
+        public IActionResult Update(Customer model)
+        {
+            CustomerValidator customerValidator = new();
+            //var validatorResult = customerValidator.Validate(model);
+
+            /*if (!validatorResult.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, validatorResult.Errors);
+            }*/
+
+            return StatusCode(StatusCodes.Status200OK, "Model is valid for update!");
         }
         #endregion
     }

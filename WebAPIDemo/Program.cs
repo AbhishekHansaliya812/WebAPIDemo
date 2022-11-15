@@ -8,6 +8,9 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using FluentValidation;
+using Model;
+using Model.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +61,10 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<WebApidemoContext>(options =>
     options.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;Database=WebAPIDemo;Trusted_Connection=True"));
 
+
+builder.Services.AddControllers().AddFluentValidation();
+builder.Services.AddScoped<IValidator<Address>, AddressValidator>();
+builder.Services.AddScoped<IValidator<Customer>, CustomerValidator>();
 
 //JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {

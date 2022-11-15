@@ -11,6 +11,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:WebAPIDemo.Controllers.CustomerController.Update(Model.Customer)">
+            <summary>
+            Update User
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebAPIDemo.Controllers.EmployeeController">
             <summary>
             Employee Controller
@@ -39,7 +46,7 @@
         <member name="M:WebAPIDemo.Controllers.EmployeeController.UpdateEmployee(System.Int32,Model.RequestModels.EmployeeUpdateRequest)">
             <summary>
             Updating Employee
-            </summary>
+            </summary>  
             <param name="employeeUpdateRequest"></param>
             <returns></returns>
         </member>

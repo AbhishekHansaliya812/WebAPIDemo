@@ -4,11 +4,6 @@
         <name>Model</name>
     </assembly>
     <members>
-        <member name="P:Model.Address.Id">
-            <summary>
-            Id
-            </summary>
-        </member>
         <member name="P:Model.Address.Street1">
             <summary>
             Street 1

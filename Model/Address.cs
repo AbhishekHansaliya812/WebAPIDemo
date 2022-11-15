@@ -10,10 +10,6 @@ namespace Model
     public class Address
     {
         /// <summary>
-        /// Id
-        /// </summary>
-        public int Id { get; set; }
-        /// <summary>
         /// Street 1
         /// </summary>
         public string Street1 { get; set; }
