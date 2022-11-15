@@ -12,7 +12,7 @@ namespace WebAPIDemo.Controllers
     /* Controller to authenticate Bearer Token and to give access of data to user */
     public class UserController : ControllerBase
     {
-        //For admin Only
+        #region Geting data if user is admin
         [HttpGet]
         [Route("Admins")]
         [Authorize]
@@ -21,6 +21,9 @@ namespace WebAPIDemo.Controllers
             var currentUser = GetCurrentUser();
             return Ok($"Hi you are an {currentUser.Role}");
         }
+        #endregion
+
+        #region Authorization
         private UserModel GetCurrentUser()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
@@ -35,5 +38,6 @@ namespace WebAPIDemo.Controllers
             }
             return null;
         }
+        #endregion
     }
 }

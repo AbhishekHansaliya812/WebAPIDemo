@@ -9,6 +9,7 @@ namespace WebAPIDemo.Controllers
     /* Controller for Customer (Fluent Validation) */
     public class CustomerController : ControllerBase
     {
+        #region Checking Fluent Validation
         /// <summary>
         /// Add customer
         /// </summary>
@@ -24,5 +25,6 @@ namespace WebAPIDemo.Controllers
 
             return StatusCode(StatusCodes.Status200OK, "Model is valid!");
         }
+        #endregion
     }
 }

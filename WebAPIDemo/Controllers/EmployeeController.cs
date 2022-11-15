@@ -25,6 +25,8 @@ namespace WebAPIDemo.Controllers
             _logger = logger;
         }
 
+
+        #region Fetching details of all employees
         /// <summary>
         /// Fetch details of all Employees
         /// </summary>
@@ -43,7 +45,9 @@ namespace WebAPIDemo.Controllers
 
             return employees;
         }
+        #endregion
 
+        #region Fetching detail of employee
         /// <summary>
         /// Fetch detail of employee
         /// </summary>
@@ -64,7 +68,9 @@ namespace WebAPIDemo.Controllers
             };
             return employees;
         }
+        #endregion
 
+        #region Creating record of new employee
         /// <summary>
         /// Create Employee
         /// </summary>
@@ -95,7 +101,9 @@ namespace WebAPIDemo.Controllers
 
             return employees;
         }
+        #endregion
 
+        #region Updating details of all employee
         /// <summary>
         /// Updating Employee
         /// </summary>  
@@ -123,7 +131,9 @@ namespace WebAPIDemo.Controllers
             };
             return employees;
         }
+        #endregion
 
+        #region Deleting record of employee
         /// <summary>
         /// Delete Employee
         /// </summary>
@@ -150,5 +160,6 @@ namespace WebAPIDemo.Controllers
             };
             return employees;
         }
+        #endregion
     }
 }

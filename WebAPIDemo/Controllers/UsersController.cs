@@ -12,6 +12,7 @@ namespace WebAPIDemo.Controllers
     /* Controller to perform CRUD Operation on user details stored in list */
     public class UsersController : ControllerBase
     {
+        #region Storing data of users in list
         /// <summary>
         /// User information
         /// </summary>
@@ -22,7 +23,9 @@ namespace WebAPIDemo.Controllers
             new User(3,"Abhineet","abhineet@gmail.com",9999999992),
             new User(4,"Jyoti","jyoti@gmail.com",9999999993),
         };
+        #endregion
 
+        #region Fetching details of all users
         /// <summary>
         /// Get Details of all users
         /// </summary>
@@ -32,7 +35,9 @@ namespace WebAPIDemo.Controllers
         { 
             return users;
         }
+        #endregion
 
+        #region Adding new user
         /// <summary>
         /// Add user
         /// </summary>
@@ -42,7 +47,9 @@ namespace WebAPIDemo.Controllers
             users.Add(user);
             return users;
         }
+        #endregion
 
+        #region Updating user
         /// <summary>
         /// Update User
         /// </summary>
@@ -52,7 +59,9 @@ namespace WebAPIDemo.Controllers
             users[0] = user;
             return users;
         }
+        #endregion
 
+        #region Deleting user
         /// <summary>
         /// Delete user
         /// </summary>
@@ -62,5 +71,6 @@ namespace WebAPIDemo.Controllers
             users.RemoveAt(0);
             return users;
         }
+        #endregion
     }
 }

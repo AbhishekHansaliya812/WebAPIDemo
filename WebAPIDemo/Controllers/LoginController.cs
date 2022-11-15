@@ -20,6 +20,7 @@ namespace WebAPIDemo.Controllers
             _config = config;
         }
 
+        #region Geting username and password
         [AllowAnonymous]
         [HttpPost]
         public ActionResult Login([FromBody] UserLogin userLogin)
@@ -33,8 +34,9 @@ namespace WebAPIDemo.Controllers
 
             return NotFound("user not found");
         }
+        #endregion
 
-        // To generate token
+        #region Generating token
         private string GenerateToken(UserModel user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -54,8 +56,9 @@ namespace WebAPIDemo.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
 
         }
+        #endregion
 
-        //To authenticate user
+        #region Authenticate user
         private UserModel Authenticate(UserLogin userLogin)
         {
             var currentUser = UserConstants.Users.FirstOrDefault(x => x.Username.ToLower() ==
@@ -66,5 +69,6 @@ namespace WebAPIDemo.Controllers
             }
             return null;
         }
+        #endregion
     }
 }
