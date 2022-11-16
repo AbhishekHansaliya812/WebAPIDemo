@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "1dd3881c-c4c0-47bf-ad57-9fe124c6bbf6",
+		"name": "Abhishek - DemoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 5,\r\n  \"userName\": \"Aakash\",\r\n  \"email\": \"aakash@gmail.com\",\r\n  \"mobileNumber\": 9999999994\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/users/PostUserDetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"users",
+								"PostUserDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"userName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"mobileNumber\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/users/GetUserDetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"users",
+								"GetUserDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"userName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"mobileNumber\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/users/PutUserDetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"users",
+								"PutUserDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"userName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"mobileNumber\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/users/DeleteUserDetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"users",
+								"DeleteUserDetails"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7249/employees/getallemployees",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"employees",
+								"getallemployees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"employeeName\": \"Jay\",\r\n  \"mobileNumber\": \"9999999995\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/employees/create",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"employees",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"employeeName\": \"Aakash\",\r\n  \"mobileNumber\": \"9999999993\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/employees/update/{EmployeeId}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"employees",
+								"update",
+								"{EmployeeId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7249/employees/delete/{EmployeeId}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"employees",
+								"delete",
+								"{EmployeeId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7249/employees/getemployee/{EmployeeId}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"employees",
+								"getemployee",
+								"{EmployeeId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User(JWT)",
+			"item": [
+				{
+					"name": "Generate authentication token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"abhishek\",\r\n    \"Password\": \"abhishek_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/api/Login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFiaGlzaGVrIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE2Njg1MjQ4NjYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTQ2MzgvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1NDYzOC8ifQ.z1XgtEfkH-3fp2IhQ6albSMuM1VUXr36vzRsIu0EA2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFiaGlzaGVrIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE2Njg0MTMzNzUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTQ2MzgvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1NDYzOC8ifQ.6Yog4jMT1aVIv4CMxSuJZBbACiYiYSV7qfJu2nIVjZk",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7249/api/User/Admins",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"api",
+								"User",
+								"Admins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer (Fluent Validation)",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Abhishek\",\r\n  \"lastName\": \"Hansaliya\",\r\n  \"age\": 21,\r\n  \"phone\": 9999999999,\r\n  \"address\": {\r\n    \"street1\": \"address string\",\r\n    \"street2\": \"address\",\r\n    \"state\": \"Gujarat\",\r\n    \"country\": \"India\",\r\n    \"city\": \"Rajkot\",\r\n    \"postalCode\": \"999999\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/api/Customer/add",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"api",
+								"Customer",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Abhishek\",\r\n  \"lastName\": \"Hansaliya\",\r\n  \"age\": 21,\r\n  \"phone\": 9999999999,\r\n  \"address\": {\r\n    \"street1\": \"address string\",\r\n    \"street2\": \"address\",\r\n    \"state\": \"Gujarat\",\r\n    \"country\": \"India\",\r\n    \"city\": \"Rajkot\",\r\n    \"postalCode\": \"999999\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7249/api/Customer/update",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7249",
+							"path": [
+								"api",
+								"Customer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
